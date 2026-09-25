@@ -1,5 +1,6 @@
 include CHANGELOG.md
-recursive-include docs *.md
+prune docs
+include docs/architecture.md docs/versioning.md
 recursive-include examples *.json
 recursive-include tests *.py *.cjs
 recursive-include scripts *.py
