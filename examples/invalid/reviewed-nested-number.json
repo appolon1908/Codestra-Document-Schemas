@@ -1,0 +1,32 @@
+{
+  "scan_id": "scan-synthetic-001",
+  "tenant_id": "tenant-example",
+  "schema_version": "1.0.0",
+  "country": "DO",
+  "document_type": "driver_licence",
+  "status": "confirmed",
+  "document_hash": "hmac-sha256:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+  "document_hash_key_id": "synthetic-key-v1",
+  "document_last4": "0000",
+  "fields": {
+    "full_name": "PERSONA SINTETICA EJEMPLO",
+    "address": "CALLE FICTICIA 123, CIUDAD EJEMPLO",
+    "height": 1.7,
+    "weight_lb": 150,
+    "sex": "F",
+    "blood_type": "O+",
+    "birth_date": "1990-01-15",
+    "issue_date": "2024-01-15",
+    "expiry_date": "2028-01-15",
+    "category": "02",
+    "restriction": "NINGUNA",
+    "first_issue_date": "2010-01-15",
+    "card_serial": "SYNTHETIC-001",
+    "document_number": "000-0000000-0"
+  },
+  "review": {
+    "reviewer_id": "reviewer-example",
+    "reviewed_at": "2026-09-25T12:00:00Z",
+    "method": "human"
+  }
+}

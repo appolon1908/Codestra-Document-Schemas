@@ -1,0 +1,21 @@
+{
+  "scan_id": "scan-synthetic-001",
+  "tenant_id": "tenant-example",
+  "schema_version": "1.0.0",
+  "job_id": "job-example",
+  "attempt": 1,
+  "sent_at": "2026-09-25T12:00:00Z",
+  "kind": "extract.request",
+  "document_type": "driver_licence",
+  "country": "DO",
+  "inputs": [
+    {
+      "asset_id": "asset-example",
+      "side": "front",
+      "media_type": "image/png",
+      "digest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "url": "https://example.invalid/secret"
+    }
+  ],
+  "deadline_at": "2026-09-25T12:05:00Z"
+}

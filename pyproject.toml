@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=77", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "codestra-document-schemas"
+version = "1.0.0"
+description = "Standalone JSON Schema 2020-12 document extraction and review contracts"
+readme = "README.md"
+requires-python = ">=3.10"
+license = "LicenseRef-Proprietary"
+dependencies = []
+
+[project.optional-dependencies]
+validation = ["jsonschema[format-nongpl]>=4.19,<5"]
+dev = ["jsonschema[format-nongpl]>=4.19,<5", "build>=1.2,<2"]
+
+[project.urls]
+Repository = "https://github.com/ingtrader21-spec/Codestra-Document-Schemas"
+
+[tool.setuptools.packages.find]
+include = ["codestra_document_schemas*"]
+namespaces = true
+
+[tool.setuptools.package-data]
+codestra_document_schemas = ["schemas/v1/*.json"]

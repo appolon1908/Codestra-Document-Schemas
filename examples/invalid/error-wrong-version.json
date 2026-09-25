@@ -1,0 +1,9 @@
+{
+  "scan_id": "scan-synthetic-001",
+  "tenant_id": "tenant-example",
+  "schema_version": "2.0.0",
+  "code": "EXTRACTION_FAILED",
+  "stage": "extract",
+  "retryable": false,
+  "occurred_at": "2026-09-25T12:00:00Z"
+}

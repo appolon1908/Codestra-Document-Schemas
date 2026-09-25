@@ -1,0 +1,55 @@
+{
+  "scan_id": "scan-synthetic-001",
+  "tenant_id": "tenant-example",
+  "schema_version": "1.0.0",
+  "document_type": "invoice",
+  "country": "DO",
+  "engine": {
+    "name": "synthetic-ocr",
+    "version": "0.0.0"
+  },
+  "fields": {
+    "full_name": "PERSONA SINTETICA EJEMPLO",
+    "document_number": "000-0000000-0",
+    "address": "CALLE FICTICIA 123, CIUDAD EJEMPLO",
+    "height": 1.7,
+    "weight_lb": 150,
+    "sex": "F",
+    "blood_type": "O+",
+    "birth_date": "1990-01-15",
+    "issue_date": "2024-01-15",
+    "expiry_date": "2028-01-15",
+    "category": "02",
+    "restriction": "NINGUNA",
+    "first_issue_date": "2010-01-15",
+    "card_serial": "SYNTHETIC-001"
+  },
+  "field_evidence": {
+    "document_number": [
+      {
+        "source": "ocr",
+        "confidence": 0.98,
+        "page": 1,
+        "bbox": [
+          0.1,
+          0.1,
+          0.4,
+          0.2
+        ],
+        "raw_text": "000-0000000-0"
+      }
+    ]
+  },
+  "warnings": [],
+  "qr_evidence": {
+    "status": "decoded",
+    "payload_digest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "raw_payload": "SYNTHETIC-QR"
+  },
+  "content_digests": [
+    {
+      "role": "front",
+      "digest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+    }
+  ]
+}
