@@ -18,7 +18,7 @@
       "const": "DO"
     },
     "document_type": {
-      "const": "driver_licence"
+      "const": "driver_license"
     },
     "status": {
       "const": "confirmed"

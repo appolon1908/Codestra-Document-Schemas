@@ -31,7 +31,7 @@
           "const": "extract.request"
         },
         "document_type": {
-          "const": "driver_licence"
+          "const": "driver_license"
         },
         "country": {
           "const": "DO"
@@ -353,7 +353,7 @@
           "const": "1.0.0"
         },
         "document_type": {
-          "const": "driver_licence"
+          "const": "driver_license"
         },
         "country": {
           "const": "DO"

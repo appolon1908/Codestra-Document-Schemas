@@ -3,7 +3,7 @@
   "tenant_id": "tenant-example",
   "schema_version": "1.0.0",
   "country": "DO",
-  "document_type": "driver_licence",
+  "document_type": "driver_license",
   "document_hash": "hmac-sha256:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
   "document_hash_key_id": "synthetic-key-v1",
   "full_name": "PERSONA SINTETICA EJEMPLO",

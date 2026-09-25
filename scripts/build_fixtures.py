@@ -13,13 +13,13 @@ FIELDS = dict(full_name='PERSONA SINTETICA EJEMPLO', document_number='000-000000
     sex='F', blood_type='O+', birth_date='1990-01-15', issue_date='2024-01-15',
     expiry_date='2028-01-15', category='02', restriction='NINGUNA',
     first_issue_date='2010-01-15', card_serial='SYNTHETIC-001')
-EXTRACTION = dict(**COMMON, document_type='driver_licence', country='DO',
+EXTRACTION = dict(**COMMON, document_type='driver_license', country='DO',
     engine=dict(name='synthetic-ocr', version='0.0.0'), fields=FIELDS,
     field_evidence={'document_number': [dict(source='ocr', confidence=0.98, page=1,
         bbox=[0.1, 0.1, 0.4, 0.2], raw_text='000-0000000-0')]},
     warnings=[], qr_evidence=dict(status='decoded', payload_digest=DIGEST, raw_payload='SYNTHETIC-QR'),
     content_digests=[dict(role='front', digest=DIGEST)])
-REVIEWED = dict(**COMMON, country='DO', document_type='driver_licence', status='confirmed',
+REVIEWED = dict(**COMMON, country='DO', document_type='driver_license', status='confirmed',
     document_hash=HASH, document_hash_key_id='synthetic-key-v1', document_last4='0000',
     fields={k: v for k, v in FIELDS.items() if k != 'document_number'},
     review=dict(reviewer_id='reviewer-example', reviewed_at=TIME, method='human'))
@@ -28,7 +28,7 @@ INTAKE = {k: REVIEWED[k] for k in [*COMMON, 'country', 'document_type', 'documen
 INTAKE.update(full_name=FIELDS['full_name'], reviewed_at=TIME)
 ERROR = dict(**COMMON, code='EXTRACTION_FAILED', stage='extract', retryable=False, occurred_at=TIME)
 MESSAGE = dict(**COMMON, job_id='job-example', attempt=1, sent_at=TIME)
-REQUEST = dict(**MESSAGE, kind='extract.request', document_type='driver_licence', country='DO',
+REQUEST = dict(**MESSAGE, kind='extract.request', document_type='driver_license', country='DO',
     inputs=[dict(asset_id='asset-example', side='front', media_type='image/png', digest=DIGEST)],
     deadline_at='2026-09-25T12:05:00Z')
 SUCCESS = dict(**MESSAGE, kind='extract.succeeded', result=EXTRACTION)

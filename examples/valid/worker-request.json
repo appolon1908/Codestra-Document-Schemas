@@ -6,7 +6,7 @@
   "attempt": 1,
   "sent_at": "2026-09-25T12:00:00Z",
   "kind": "extract.request",
-  "document_type": "driver_licence",
+  "document_type": "driver_license",
   "country": "DO",
   "inputs": [
     {

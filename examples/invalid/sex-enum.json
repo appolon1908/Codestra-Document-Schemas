@@ -2,7 +2,7 @@
   "scan_id": "scan-synthetic-001",
   "tenant_id": "tenant-example",
   "schema_version": "1.0.0",
-  "document_type": "driver_licence",
+  "document_type": "driver_license",
   "country": "DO",
   "engine": {
     "name": "synthetic-ocr",

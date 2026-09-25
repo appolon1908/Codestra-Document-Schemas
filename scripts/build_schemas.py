@@ -91,15 +91,15 @@ EXTRACTION = obj({**COMMON, 'document_type': string(64, r'^[a-z][a-z0-9_]{0,63}$
     'qr_evidence': ref('qr'),
     'content_digests': {**array(ref('contentDigest'), 10), 'minItems': 1, 'uniqueItems': True}})
 LICENCE = obj({**EXTRACTION['properties'], 'country': {'const': 'DO'},
-    'document_type': {'const': 'driver_licence'}, 'fields': ref('licenceFields'),
+    'document_type': {'const': 'driver_license'}, 'fields': ref('licenceFields'),
     'field_evidence': ref('licenceEvidence')})
-REVIEWED = obj({**COMMON, 'country': {'const': 'DO'}, 'document_type': {'const': 'driver_licence'},
+REVIEWED = obj({**COMMON, 'country': {'const': 'DO'}, 'document_type': {'const': 'driver_license'},
     'status': {'const': 'confirmed'}, 'document_hash': ref('documentHash'),
     'document_hash_key_id': ref('id'), 'document_last4': ref('last4'),
     'fields': ref('reviewedFields'),
     'review': obj({'reviewer_id': ref('id'), 'reviewed_at': ref('timestamp'),
                    'method': enum('human', 'policy')})})
-INTAKE = obj({**COMMON, 'country': {'const': 'DO'}, 'document_type': {'const': 'driver_licence'},
+INTAKE = obj({**COMMON, 'country': {'const': 'DO'}, 'document_type': {'const': 'driver_license'},
     'document_hash': ref('documentHash'), 'document_hash_key_id': ref('id'),
     'document_last4': ref('last4'), 'full_name': FIELDS['full_name'],
     'birth_date': nullable(ref('date')), 'address': nullable(FIELDS['address']),
@@ -116,7 +116,7 @@ DEFS['licence'] = LICENCE
 MESSAGE = {**COMMON, 'job_id': ref('id'), 'attempt': dict(type='integer', minimum=1, maximum=100),
            'sent_at': ref('timestamp')}
 WORKER = {'oneOf': [
-    obj({**MESSAGE, 'kind': {'const': 'extract.request'}, 'document_type': {'const': 'driver_licence'},
+    obj({**MESSAGE, 'kind': {'const': 'extract.request'}, 'document_type': {'const': 'driver_license'},
          'country': {'const': 'DO'}, 'inputs': {**array(obj({'asset_id': ref('id'),
              'side': enum('front', 'back'), 'media_type': enum('image/jpeg', 'image/png', 'application/pdf'),
              'digest': ref('digest')}), 2), 'minItems': 1, 'uniqueItems': True},
