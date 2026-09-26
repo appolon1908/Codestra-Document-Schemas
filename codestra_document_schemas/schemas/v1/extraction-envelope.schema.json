@@ -1,0 +1,301 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.codestra.dev/document-intelligence/v1/extraction-envelope.schema.json",
+  "title": "Transient generic extraction envelope",
+  "description": "Contract version 1.0.0. See architecture and privacy requirements in the package documentation.",
+  "type": "object",
+  "properties": {
+    "scan_id": {
+      "$ref": "#/$defs/id"
+    },
+    "tenant_id": {
+      "$ref": "#/$defs/id"
+    },
+    "schema_version": {
+      "const": "1.0.0"
+    },
+    "document_type": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 64,
+      "pattern": "^[a-z][a-z0-9_]{0,63}$"
+    },
+    "country": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 2,
+      "pattern": "^[A-Z]{2}$"
+    },
+    "engine": {
+      "$ref": "#/$defs/engine"
+    },
+    "fields": {
+      "$ref": "#/$defs/genericFields"
+    },
+    "field_evidence": {
+      "$ref": "#/$defs/fieldEvidence"
+    },
+    "warnings": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/warning"
+      },
+      "maxItems": 100
+    },
+    "qr_evidence": {
+      "$ref": "#/$defs/qr"
+    },
+    "content_digests": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/contentDigest"
+      },
+      "maxItems": 10,
+      "minItems": 1,
+      "uniqueItems": true
+    }
+  },
+  "required": [
+    "scan_id",
+    "tenant_id",
+    "schema_version",
+    "document_type",
+    "country",
+    "engine",
+    "fields",
+    "field_evidence",
+    "warnings",
+    "qr_evidence",
+    "content_digests"
+  ],
+  "additionalProperties": false,
+  "$defs": {
+    "bbox": {
+      "type": "array",
+      "minItems": 4,
+      "maxItems": 4,
+      "items": {
+        "type": "number",
+        "minimum": 0,
+        "maximum": 1
+      },
+      "description": "Normalized [x_min, y_min, x_max, y_max]. Application checks ordering."
+    },
+    "confidence": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "contentDigest": {
+      "type": "object",
+      "properties": {
+        "role": {
+          "type": "string",
+          "enum": [
+            "front",
+            "back",
+            "document"
+          ]
+        },
+        "digest": {
+          "$ref": "#/$defs/digest"
+        }
+      },
+      "required": [
+        "role",
+        "digest"
+      ],
+      "additionalProperties": false
+    },
+    "digest": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 71,
+      "pattern": "^sha256:[0-9a-f]{64}$"
+    },
+    "engine": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "$ref": "#/$defs/id"
+        },
+        "version": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 64,
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9._+-]{0,63}$"
+        }
+      },
+      "required": [
+        "name",
+        "version"
+      ],
+      "additionalProperties": false
+    },
+    "evidence": {
+      "type": "object",
+      "properties": {
+        "source": {
+          "type": "string",
+          "enum": [
+            "ocr",
+            "qr",
+            "derived"
+          ]
+        },
+        "confidence": {
+          "$ref": "#/$defs/confidence"
+        },
+        "page": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 100
+        },
+        "bbox": {
+          "$ref": "#/$defs/bbox"
+        },
+        "raw_text": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 2048,
+          "pattern": "\\S"
+        }
+      },
+      "required": [
+        "source",
+        "confidence"
+      ],
+      "additionalProperties": false
+    },
+    "fieldEvidence": {
+      "type": "object",
+      "maxProperties": 100,
+      "propertyNames": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 64,
+        "pattern": "^[a-z][a-z0-9_]{0,63}$"
+      },
+      "additionalProperties": {
+        "type": "array",
+        "items": {
+          "$ref": "#/$defs/evidence"
+        },
+        "maxItems": 20
+      }
+    },
+    "genericFields": {
+      "type": "object",
+      "maxProperties": 100,
+      "propertyNames": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 64,
+        "pattern": "^[a-z][a-z0-9_]{0,63}$"
+      },
+      "additionalProperties": {
+        "anyOf": [
+          {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 2048,
+            "pattern": "\\S"
+          },
+          {
+            "type": "number"
+          },
+          {
+            "type": "boolean"
+          },
+          {
+            "type": "null"
+          }
+        ]
+      }
+    },
+    "id": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 128,
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$"
+    },
+    "qr": {
+      "oneOf": [
+        {
+          "type": "object",
+          "properties": {
+            "status": {
+              "const": "decoded"
+            },
+            "payload_digest": {
+              "$ref": "#/$defs/digest"
+            },
+            "raw_payload": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 8192,
+              "pattern": "\\S"
+            }
+          },
+          "required": [
+            "status",
+            "payload_digest"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "status": {
+              "type": "string",
+              "enum": [
+                "not_detected",
+                "unreadable"
+              ]
+            }
+          },
+          "required": [
+            "status"
+          ],
+          "additionalProperties": false
+        }
+      ]
+    },
+    "warning": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "string",
+          "enum": [
+            "LOW_CONFIDENCE",
+            "MISSING_FIELD",
+            "QR_UNREADABLE",
+            "QR_MISMATCH",
+            "UNSUPPORTED_LAYOUT",
+            "DATE_ORDER",
+            "REVIEW_REQUIRED"
+          ]
+        },
+        "field": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 64,
+          "pattern": "^[a-z][a-z0-9_]{0,63}$"
+        },
+        "severity": {
+          "type": "string",
+          "enum": [
+            "info",
+            "warning",
+            "error"
+          ]
+        }
+      },
+      "required": [
+        "code",
+        "severity"
+      ],
+      "additionalProperties": false
+    }
+  }
+}

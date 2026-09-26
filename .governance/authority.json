@@ -1,0 +1,16 @@
+{
+  "version": 1,
+  "repository": "Codestra-Document-Schemas",
+  "repository_url": "https://github.com/ingtrader21-spec/Codestra-Document-Schemas.git",
+  "active_branch": "mission/document-intelligence-foundation-20260925",
+  "base_branch": "development",
+  "base_sha": "57d5a999b006f819da0dc7d1743cf325b3345fc1",
+  "upstream_ref": "origin/mission/document-intelligence-foundation-20260925",
+  "publication_branch": "mission/document-intelligence-foundation-20260925",
+  "development_workstation": "codestra-desktop",
+  "publication_workstation": "Appolon",
+  "allow_production_effects": false,
+  "allow_force_push": false,
+  "canonical_worktree": "/home/codestra/Worktrees/document-intelligence/Codestra-Document-Schemas",
+  "updated_at": "2026-09-26T17:02:13.403418+00:00"
+}

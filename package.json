@@ -1,0 +1,17 @@
+{
+  "name": "@codestra/document-schemas",
+  "version": "1.0.0",
+  "description": "Standalone JSON Schema 2020-12 document extraction and review contracts",
+  "license": "UNLICENSED",
+  "main": "index.cjs",
+  "types": "index.d.ts",
+  "exports": {
+    ".": { "types": "./index.d.ts", "require": "./index.cjs", "default": "./index.cjs" },
+    "./schemas/v1/*": "./codestra_document_schemas/schemas/v1/*"
+  },
+  "files": ["index.cjs", "index.d.ts", "codestra_document_schemas/schemas", "README.md", "docs/architecture.md", "docs/versioning.md", "CHANGELOG.md"],
+  "engines": { "node": ">=18" },
+  "repository": { "type": "git", "url": "https://github.com/ingtrader21-spec/Codestra-Document-Schemas.git" },
+  "scripts": { "test": "node --test tests/*.test.cjs" },
+  "devDependencies": { "ajv": "8.17.1", "ajv-formats": "3.0.1" }
+}

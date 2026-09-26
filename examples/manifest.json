@@ -1,0 +1,477 @@
+[
+  {
+    "path": "valid/extraction-envelope.json",
+    "schema": "extraction-envelope",
+    "valid": true
+  },
+  {
+    "path": "invalid/extraction-envelope-unknown-property.json",
+    "schema": "extraction-envelope",
+    "valid": false
+  },
+  {
+    "path": "invalid/extraction-envelope-wrong-version.json",
+    "schema": "extraction-envelope",
+    "valid": false
+  },
+  {
+    "path": "invalid/extraction-envelope-missing-tenant.json",
+    "schema": "extraction-envelope",
+    "valid": false
+  },
+  {
+    "path": "valid/do-driver-licence.json",
+    "schema": "do-driver-licence",
+    "valid": true
+  },
+  {
+    "path": "invalid/do-driver-licence-unknown-property.json",
+    "schema": "do-driver-licence",
+    "valid": false
+  },
+  {
+    "path": "invalid/do-driver-licence-wrong-version.json",
+    "schema": "do-driver-licence",
+    "valid": false
+  },
+  {
+    "path": "invalid/do-driver-licence-missing-tenant.json",
+    "schema": "do-driver-licence",
+    "valid": false
+  },
+  {
+    "path": "valid/reviewed-result.json",
+    "schema": "reviewed-result",
+    "valid": true
+  },
+  {
+    "path": "invalid/reviewed-result-unknown-property.json",
+    "schema": "reviewed-result",
+    "valid": false
+  },
+  {
+    "path": "invalid/reviewed-result-wrong-version.json",
+    "schema": "reviewed-result",
+    "valid": false
+  },
+  {
+    "path": "invalid/reviewed-result-missing-tenant.json",
+    "schema": "reviewed-result",
+    "valid": false
+  },
+  {
+    "path": "valid/client-intake.json",
+    "schema": "client-intake",
+    "valid": true
+  },
+  {
+    "path": "invalid/client-intake-unknown-property.json",
+    "schema": "client-intake",
+    "valid": false
+  },
+  {
+    "path": "invalid/client-intake-wrong-version.json",
+    "schema": "client-intake",
+    "valid": false
+  },
+  {
+    "path": "invalid/client-intake-missing-tenant.json",
+    "schema": "client-intake",
+    "valid": false
+  },
+  {
+    "path": "valid/error.json",
+    "schema": "error",
+    "valid": true
+  },
+  {
+    "path": "invalid/error-unknown-property.json",
+    "schema": "error",
+    "valid": false
+  },
+  {
+    "path": "invalid/error-wrong-version.json",
+    "schema": "error",
+    "valid": false
+  },
+  {
+    "path": "invalid/error-missing-tenant.json",
+    "schema": "error",
+    "valid": false
+  },
+  {
+    "path": "valid/worker-request.json",
+    "schema": "worker-contract",
+    "valid": true
+  },
+  {
+    "path": "invalid/worker-request-unknown.json",
+    "schema": "worker-contract",
+    "valid": false
+  },
+  {
+    "path": "valid/worker-success.json",
+    "schema": "worker-contract",
+    "valid": true
+  },
+  {
+    "path": "invalid/worker-success-unknown.json",
+    "schema": "worker-contract",
+    "valid": false
+  },
+  {
+    "path": "valid/worker-failure.json",
+    "schema": "worker-contract",
+    "valid": true
+  },
+  {
+    "path": "invalid/worker-failure-unknown.json",
+    "schema": "worker-contract",
+    "valid": false
+  },
+  {
+    "path": "valid/licence-all-unknown.json",
+    "schema": "do-driver-licence",
+    "valid": true
+  },
+  {
+    "path": "valid/licence-leap-date.json",
+    "schema": "do-driver-licence",
+    "valid": true
+  },
+  {
+    "path": "valid/generic-other-type.json",
+    "schema": "extraction-envelope",
+    "valid": true
+  },
+  {
+    "path": "valid/qr-not-detected.json",
+    "schema": "do-driver-licence",
+    "valid": true
+  },
+  {
+    "path": "valid/intake-optional-fields.json",
+    "schema": "client-intake",
+    "valid": true
+  },
+  {
+    "path": "invalid/invalid-calendar.json",
+    "schema": "do-driver-licence",
+    "valid": false
+  },
+  {
+    "path": "invalid/invalid-date-shape.json",
+    "schema": "do-driver-licence",
+    "valid": false
+  },
+  {
+    "path": "invalid/number-regex.json",
+    "schema": "do-driver-licence",
+    "valid": false
+  },
+  {
+    "path": "invalid/number-type.json",
+    "schema": "do-driver-licence",
+    "valid": false
+  },
+  {
+    "path": "invalid/height-unit.json",
+    "schema": "do-driver-licence",
+    "valid": false
+  },
+  {
+    "path": "invalid/weight-negative.json",
+    "schema": "do-driver-licence",
+    "valid": false
+  },
+  {
+    "path": "invalid/sex-enum.json",
+    "schema": "do-driver-licence",
+    "valid": false
+  },
+  {
+    "path": "invalid/blood-enum.json",
+    "schema": "do-driver-licence",
+    "valid": false
+  },
+  {
+    "path": "invalid/name-blank.json",
+    "schema": "do-driver-licence",
+    "valid": false
+  },
+  {
+    "path": "invalid/name-long.json",
+    "schema": "do-driver-licence",
+    "valid": false
+  },
+  {
+    "path": "invalid/serial-regex.json",
+    "schema": "do-driver-licence",
+    "valid": false
+  },
+  {
+    "path": "invalid/category-regex.json",
+    "schema": "do-driver-licence",
+    "valid": false
+  },
+  {
+    "path": "invalid/field-unknown.json",
+    "schema": "do-driver-licence",
+    "valid": false
+  },
+  {
+    "path": "invalid/wrong-country.json",
+    "schema": "do-driver-licence",
+    "valid": false
+  },
+  {
+    "path": "invalid/wrong-document.json",
+    "schema": "do-driver-licence",
+    "valid": false
+  },
+  {
+    "path": "invalid/evidence-unknown.json",
+    "schema": "do-driver-licence",
+    "valid": false
+  },
+  {
+    "path": "invalid/confidence-range.json",
+    "schema": "do-driver-licence",
+    "valid": false
+  },
+  {
+    "path": "invalid/bbox-range.json",
+    "schema": "do-driver-licence",
+    "valid": false
+  },
+  {
+    "path": "invalid/bbox-length.json",
+    "schema": "do-driver-licence",
+    "valid": false
+  },
+  {
+    "path": "invalid/evidence-extra.json",
+    "schema": "do-driver-licence",
+    "valid": false
+  },
+  {
+    "path": "invalid/qr-status.json",
+    "schema": "do-driver-licence",
+    "valid": false
+  },
+  {
+    "path": "invalid/qr-extra.json",
+    "schema": "do-driver-licence",
+    "valid": false
+  },
+  {
+    "path": "invalid/digest-regex.json",
+    "schema": "do-driver-licence",
+    "valid": false
+  },
+  {
+    "path": "invalid/digests-empty.json",
+    "schema": "do-driver-licence",
+    "valid": false
+  },
+  {
+    "path": "invalid/warning-payload.json",
+    "schema": "do-driver-licence",
+    "valid": false
+  },
+  {
+    "path": "invalid/engine-extra.json",
+    "schema": "do-driver-licence",
+    "valid": false
+  },
+  {
+    "path": "invalid/missing-licence-field.json",
+    "schema": "do-driver-licence",
+    "valid": false
+  },
+  {
+    "path": "invalid/qr-missing-digest.json",
+    "schema": "do-driver-licence",
+    "valid": false
+  },
+  {
+    "path": "invalid/reviewed-result-reject-document_number.json",
+    "schema": "reviewed-result",
+    "valid": false
+  },
+  {
+    "path": "invalid/reviewed-result-reject-raw_image.json",
+    "schema": "reviewed-result",
+    "valid": false
+  },
+  {
+    "path": "invalid/reviewed-result-reject-biometric_payload.json",
+    "schema": "reviewed-result",
+    "valid": false
+  },
+  {
+    "path": "invalid/reviewed-result-reject-qr_evidence.json",
+    "schema": "reviewed-result",
+    "valid": false
+  },
+  {
+    "path": "invalid/reviewed-result-reject-field_evidence.json",
+    "schema": "reviewed-result",
+    "valid": false
+  },
+  {
+    "path": "invalid/reviewed-result-hash-required.json",
+    "schema": "reviewed-result",
+    "valid": false
+  },
+  {
+    "path": "invalid/reviewed-result-last4-required.json",
+    "schema": "reviewed-result",
+    "valid": false
+  },
+  {
+    "path": "invalid/reviewed-result-last4-regex.json",
+    "schema": "reviewed-result",
+    "valid": false
+  },
+  {
+    "path": "invalid/reviewed-result-hash-regex.json",
+    "schema": "reviewed-result",
+    "valid": false
+  },
+  {
+    "path": "invalid/client-intake-reject-document_number.json",
+    "schema": "client-intake",
+    "valid": false
+  },
+  {
+    "path": "invalid/client-intake-reject-raw_image.json",
+    "schema": "client-intake",
+    "valid": false
+  },
+  {
+    "path": "invalid/client-intake-reject-biometric_payload.json",
+    "schema": "client-intake",
+    "valid": false
+  },
+  {
+    "path": "invalid/client-intake-reject-qr_evidence.json",
+    "schema": "client-intake",
+    "valid": false
+  },
+  {
+    "path": "invalid/client-intake-reject-field_evidence.json",
+    "schema": "client-intake",
+    "valid": false
+  },
+  {
+    "path": "invalid/client-intake-hash-required.json",
+    "schema": "client-intake",
+    "valid": false
+  },
+  {
+    "path": "invalid/client-intake-last4-required.json",
+    "schema": "client-intake",
+    "valid": false
+  },
+  {
+    "path": "invalid/client-intake-last4-regex.json",
+    "schema": "client-intake",
+    "valid": false
+  },
+  {
+    "path": "invalid/client-intake-hash-regex.json",
+    "schema": "client-intake",
+    "valid": false
+  },
+  {
+    "path": "invalid/reviewed-nested-number.json",
+    "schema": "reviewed-result",
+    "valid": false
+  },
+  {
+    "path": "invalid/reviewed-null-name.json",
+    "schema": "reviewed-result",
+    "valid": false
+  },
+  {
+    "path": "invalid/reviewed-not-confirmed.json",
+    "schema": "reviewed-result",
+    "valid": false
+  },
+  {
+    "path": "invalid/reviewed-freeform-note.json",
+    "schema": "reviewed-result",
+    "valid": false
+  },
+  {
+    "path": "invalid/reviewed-invalid-timestamp.json",
+    "schema": "reviewed-result",
+    "valid": false
+  },
+  {
+    "path": "invalid/intake-invalid-birth.json",
+    "schema": "client-intake",
+    "valid": false
+  },
+  {
+    "path": "invalid/generic-nested-payload.json",
+    "schema": "extraction-envelope",
+    "valid": false
+  },
+  {
+    "path": "invalid/generic-country-length.json",
+    "schema": "extraction-envelope",
+    "valid": false
+  },
+  {
+    "path": "invalid/error-raw-message.json",
+    "schema": "error",
+    "valid": false
+  },
+  {
+    "path": "invalid/error-unknown-code.json",
+    "schema": "error",
+    "valid": false
+  },
+  {
+    "path": "invalid/error-retry-type.json",
+    "schema": "error",
+    "valid": false
+  },
+  {
+    "path": "invalid/worker-result-error-exclusive.json",
+    "schema": "worker-contract",
+    "valid": false
+  },
+  {
+    "path": "invalid/worker-success-missing-result.json",
+    "schema": "worker-contract",
+    "valid": false
+  },
+  {
+    "path": "invalid/worker-empty-inputs.json",
+    "schema": "worker-contract",
+    "valid": false
+  },
+  {
+    "path": "invalid/worker-negative-attempt.json",
+    "schema": "worker-contract",
+    "valid": false
+  },
+  {
+    "path": "invalid/worker-signed-url.json",
+    "schema": "worker-contract",
+    "valid": false
+  },
+  {
+    "path": "invalid/worker-wrong-profile.json",
+    "schema": "worker-contract",
+    "valid": false
+  },
+  {
+    "path": "invalid/worker-nested-error-message.json",
+    "schema": "worker-contract",
+    "valid": false
+  }
+]

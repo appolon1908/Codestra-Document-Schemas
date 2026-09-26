@@ -1,0 +1,8 @@
+{
+  "scan_id": "scan-synthetic-001",
+  "schema_version": "1.0.0",
+  "code": "EXTRACTION_FAILED",
+  "stage": "extract",
+  "retryable": false,
+  "occurred_at": "2026-09-25T12:00:00Z"
+}

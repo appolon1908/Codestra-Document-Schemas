@@ -1,0 +1,12 @@
+version: 1
+repository: Codestra-Document-Schemas
+repository_url: https://github.com/ingtrader21-spec/Codestra-Document-Schemas.git
+canonical_path: /home/codestra/Worktrees/document-intelligence/Codestra-Document-Schemas
+active_worktree: /home/codestra/Worktrees/document-intelligence/Codestra-Document-Schemas
+active_branch: mission/document-intelligence-foundation-20260925
+base_branch: development
+base_sha: 57d5a999b006f819da0dc7d1743cf325b3345fc1
+upstream_ref: origin/mission/document-intelligence-foundation-20260925
+publication_branch: mission/document-intelligence-foundation-20260925
+production_effects_allowed: false
+certification_mode: isolated_exact_sha
