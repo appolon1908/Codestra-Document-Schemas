@@ -1,0 +1,467 @@
+{
+  "schema_version": "codestra.workstations.v3",
+  "family": "document-intelligence",
+  "product": "Codestra-Document-Schemas",
+  "sections": [
+    {
+      "section": "ds-01-models",
+      "branch": "section/ds-01-models",
+      "order": 1,
+      "depends_on": [],
+      "subsections": [
+        {
+          "subsection": "01-document",
+          "workstation_id": "codestra-document-schemas::ds-01-models::01-document",
+          "branch": "subsection/ds-01-models--01-document",
+          "parent_branch": "section/ds-01-models",
+          "order": 1,
+          "depends_on": [],
+          "required_gates": [
+            "lint",
+            "unit",
+            "integration",
+            "contract",
+            "security",
+            "clean_tree",
+            "remote_sha_match",
+            "ci_exact_sha",
+            "review",
+            "regression"
+          ],
+          "worktree": "/srv/codestra/workstations/Codestra-Document-Schemas/sections/ds-01-models/subsections/01-document/repo"
+        },
+        {
+          "subsection": "02-extraction",
+          "workstation_id": "codestra-document-schemas::ds-01-models::02-extraction",
+          "branch": "subsection/ds-01-models--02-extraction",
+          "parent_branch": "section/ds-01-models",
+          "order": 2,
+          "depends_on": [
+            "codestra-document-schemas::ds-01-models::01-document"
+          ],
+          "required_gates": [
+            "lint",
+            "unit",
+            "integration",
+            "contract",
+            "security",
+            "clean_tree",
+            "remote_sha_match",
+            "ci_exact_sha",
+            "review",
+            "regression"
+          ],
+          "worktree": "/srv/codestra/workstations/Codestra-Document-Schemas/sections/ds-01-models/subsections/02-extraction/repo"
+        },
+        {
+          "subsection": "03-job-event",
+          "workstation_id": "codestra-document-schemas::ds-01-models::03-job-event",
+          "branch": "subsection/ds-01-models--03-job-event",
+          "parent_branch": "section/ds-01-models",
+          "order": 3,
+          "depends_on": [
+            "codestra-document-schemas::ds-01-models::02-extraction"
+          ],
+          "required_gates": [
+            "lint",
+            "unit",
+            "integration",
+            "contract",
+            "security",
+            "clean_tree",
+            "remote_sha_match",
+            "ci_exact_sha",
+            "review",
+            "regression"
+          ],
+          "worktree": "/srv/codestra/workstations/Codestra-Document-Schemas/sections/ds-01-models/subsections/03-job-event/repo"
+        }
+      ]
+    },
+    {
+      "section": "ds-02-validation",
+      "branch": "section/ds-02-validation",
+      "order": 2,
+      "depends_on": [
+        "codestra-document-schemas::ds-01-models"
+      ],
+      "subsections": [
+        {
+          "subsection": "01-json-schema",
+          "workstation_id": "codestra-document-schemas::ds-02-validation::01-json-schema",
+          "branch": "subsection/ds-02-validation--01-json-schema",
+          "parent_branch": "section/ds-02-validation",
+          "order": 1,
+          "depends_on": [],
+          "required_gates": [
+            "lint",
+            "unit",
+            "integration",
+            "contract",
+            "security",
+            "clean_tree",
+            "remote_sha_match",
+            "ci_exact_sha",
+            "review",
+            "regression"
+          ],
+          "worktree": "/srv/codestra/workstations/Codestra-Document-Schemas/sections/ds-02-validation/subsections/01-json-schema/repo"
+        },
+        {
+          "subsection": "02-semantic-rules",
+          "workstation_id": "codestra-document-schemas::ds-02-validation::02-semantic-rules",
+          "branch": "subsection/ds-02-validation--02-semantic-rules",
+          "parent_branch": "section/ds-02-validation",
+          "order": 2,
+          "depends_on": [
+            "codestra-document-schemas::ds-02-validation::01-json-schema"
+          ],
+          "required_gates": [
+            "lint",
+            "unit",
+            "integration",
+            "contract",
+            "security",
+            "clean_tree",
+            "remote_sha_match",
+            "ci_exact_sha",
+            "review",
+            "regression"
+          ],
+          "worktree": "/srv/codestra/workstations/Codestra-Document-Schemas/sections/ds-02-validation/subsections/02-semantic-rules/repo"
+        },
+        {
+          "subsection": "03-fixtures",
+          "workstation_id": "codestra-document-schemas::ds-02-validation::03-fixtures",
+          "branch": "subsection/ds-02-validation--03-fixtures",
+          "parent_branch": "section/ds-02-validation",
+          "order": 3,
+          "depends_on": [
+            "codestra-document-schemas::ds-02-validation::02-semantic-rules"
+          ],
+          "required_gates": [
+            "lint",
+            "unit",
+            "integration",
+            "contract",
+            "security",
+            "clean_tree",
+            "remote_sha_match",
+            "ci_exact_sha",
+            "review",
+            "regression"
+          ],
+          "worktree": "/srv/codestra/workstations/Codestra-Document-Schemas/sections/ds-02-validation/subsections/03-fixtures/repo"
+        }
+      ]
+    },
+    {
+      "section": "ds-03-versioning",
+      "branch": "section/ds-03-versioning",
+      "order": 3,
+      "depends_on": [
+        "codestra-document-schemas::ds-02-validation"
+      ],
+      "subsections": [
+        {
+          "subsection": "01-version-policy",
+          "workstation_id": "codestra-document-schemas::ds-03-versioning::01-version-policy",
+          "branch": "subsection/ds-03-versioning--01-version-policy",
+          "parent_branch": "section/ds-03-versioning",
+          "order": 1,
+          "depends_on": [],
+          "required_gates": [
+            "lint",
+            "unit",
+            "integration",
+            "contract",
+            "security",
+            "clean_tree",
+            "remote_sha_match",
+            "ci_exact_sha",
+            "review",
+            "regression"
+          ],
+          "worktree": "/srv/codestra/workstations/Codestra-Document-Schemas/sections/ds-03-versioning/subsections/01-version-policy/repo"
+        },
+        {
+          "subsection": "02-migrations",
+          "workstation_id": "codestra-document-schemas::ds-03-versioning::02-migrations",
+          "branch": "subsection/ds-03-versioning--02-migrations",
+          "parent_branch": "section/ds-03-versioning",
+          "order": 2,
+          "depends_on": [
+            "codestra-document-schemas::ds-03-versioning::01-version-policy"
+          ],
+          "required_gates": [
+            "lint",
+            "unit",
+            "integration",
+            "contract",
+            "security",
+            "clean_tree",
+            "remote_sha_match",
+            "ci_exact_sha",
+            "review",
+            "regression"
+          ],
+          "worktree": "/srv/codestra/workstations/Codestra-Document-Schemas/sections/ds-03-versioning/subsections/02-migrations/repo"
+        },
+        {
+          "subsection": "03-deprecation",
+          "workstation_id": "codestra-document-schemas::ds-03-versioning::03-deprecation",
+          "branch": "subsection/ds-03-versioning--03-deprecation",
+          "parent_branch": "section/ds-03-versioning",
+          "order": 3,
+          "depends_on": [
+            "codestra-document-schemas::ds-03-versioning::02-migrations"
+          ],
+          "required_gates": [
+            "lint",
+            "unit",
+            "integration",
+            "contract",
+            "security",
+            "clean_tree",
+            "remote_sha_match",
+            "ci_exact_sha",
+            "review",
+            "regression"
+          ],
+          "worktree": "/srv/codestra/workstations/Codestra-Document-Schemas/sections/ds-03-versioning/subsections/03-deprecation/repo"
+        }
+      ]
+    },
+    {
+      "section": "ds-04-compatibility",
+      "branch": "section/ds-04-compatibility",
+      "order": 4,
+      "depends_on": [
+        "codestra-document-schemas::ds-03-versioning"
+      ],
+      "subsections": [
+        {
+          "subsection": "01-backward",
+          "workstation_id": "codestra-document-schemas::ds-04-compatibility::01-backward",
+          "branch": "subsection/ds-04-compatibility--01-backward",
+          "parent_branch": "section/ds-04-compatibility",
+          "order": 1,
+          "depends_on": [],
+          "required_gates": [
+            "lint",
+            "unit",
+            "integration",
+            "contract",
+            "security",
+            "clean_tree",
+            "remote_sha_match",
+            "ci_exact_sha",
+            "review",
+            "regression"
+          ],
+          "worktree": "/srv/codestra/workstations/Codestra-Document-Schemas/sections/ds-04-compatibility/subsections/01-backward/repo"
+        },
+        {
+          "subsection": "02-forward",
+          "workstation_id": "codestra-document-schemas::ds-04-compatibility::02-forward",
+          "branch": "subsection/ds-04-compatibility--02-forward",
+          "parent_branch": "section/ds-04-compatibility",
+          "order": 2,
+          "depends_on": [
+            "codestra-document-schemas::ds-04-compatibility::01-backward"
+          ],
+          "required_gates": [
+            "lint",
+            "unit",
+            "integration",
+            "contract",
+            "security",
+            "clean_tree",
+            "remote_sha_match",
+            "ci_exact_sha",
+            "review",
+            "regression"
+          ],
+          "worktree": "/srv/codestra/workstations/Codestra-Document-Schemas/sections/ds-04-compatibility/subsections/02-forward/repo"
+        },
+        {
+          "subsection": "03-contract-tests",
+          "workstation_id": "codestra-document-schemas::ds-04-compatibility::03-contract-tests",
+          "branch": "subsection/ds-04-compatibility--03-contract-tests",
+          "parent_branch": "section/ds-04-compatibility",
+          "order": 3,
+          "depends_on": [
+            "codestra-document-schemas::ds-04-compatibility::02-forward"
+          ],
+          "required_gates": [
+            "lint",
+            "unit",
+            "integration",
+            "contract",
+            "security",
+            "clean_tree",
+            "remote_sha_match",
+            "ci_exact_sha",
+            "review",
+            "regression"
+          ],
+          "worktree": "/srv/codestra/workstations/Codestra-Document-Schemas/sections/ds-04-compatibility/subsections/03-contract-tests/repo"
+        }
+      ]
+    },
+    {
+      "section": "ds-05-security",
+      "branch": "section/ds-05-security",
+      "order": 5,
+      "depends_on": [
+        "codestra-document-schemas::ds-04-compatibility"
+      ],
+      "subsections": [
+        {
+          "subsection": "01-sensitive-fields",
+          "workstation_id": "codestra-document-schemas::ds-05-security::01-sensitive-fields",
+          "branch": "subsection/ds-05-security--01-sensitive-fields",
+          "parent_branch": "section/ds-05-security",
+          "order": 1,
+          "depends_on": [],
+          "required_gates": [
+            "lint",
+            "unit",
+            "integration",
+            "contract",
+            "security",
+            "clean_tree",
+            "remote_sha_match",
+            "ci_exact_sha",
+            "review",
+            "regression"
+          ],
+          "worktree": "/srv/codestra/workstations/Codestra-Document-Schemas/sections/ds-05-security/subsections/01-sensitive-fields/repo"
+        },
+        {
+          "subsection": "02-redaction",
+          "workstation_id": "codestra-document-schemas::ds-05-security::02-redaction",
+          "branch": "subsection/ds-05-security--02-redaction",
+          "parent_branch": "section/ds-05-security",
+          "order": 2,
+          "depends_on": [
+            "codestra-document-schemas::ds-05-security::01-sensitive-fields"
+          ],
+          "required_gates": [
+            "lint",
+            "unit",
+            "integration",
+            "contract",
+            "security",
+            "clean_tree",
+            "remote_sha_match",
+            "ci_exact_sha",
+            "review",
+            "regression"
+          ],
+          "worktree": "/srv/codestra/workstations/Codestra-Document-Schemas/sections/ds-05-security/subsections/02-redaction/repo"
+        },
+        {
+          "subsection": "03-audit-fields",
+          "workstation_id": "codestra-document-schemas::ds-05-security::03-audit-fields",
+          "branch": "subsection/ds-05-security--03-audit-fields",
+          "parent_branch": "section/ds-05-security",
+          "order": 3,
+          "depends_on": [
+            "codestra-document-schemas::ds-05-security::02-redaction"
+          ],
+          "required_gates": [
+            "lint",
+            "unit",
+            "integration",
+            "contract",
+            "security",
+            "clean_tree",
+            "remote_sha_match",
+            "ci_exact_sha",
+            "review",
+            "regression"
+          ],
+          "worktree": "/srv/codestra/workstations/Codestra-Document-Schemas/sections/ds-05-security/subsections/03-audit-fields/repo"
+        }
+      ]
+    },
+    {
+      "section": "ds-06-release",
+      "branch": "section/ds-06-release",
+      "order": 6,
+      "depends_on": [
+        "codestra-document-schemas::ds-05-security"
+      ],
+      "subsections": [
+        {
+          "subsection": "01-generated-artifacts",
+          "workstation_id": "codestra-document-schemas::ds-06-release::01-generated-artifacts",
+          "branch": "subsection/ds-06-release--01-generated-artifacts",
+          "parent_branch": "section/ds-06-release",
+          "order": 1,
+          "depends_on": [],
+          "required_gates": [
+            "lint",
+            "unit",
+            "integration",
+            "contract",
+            "security",
+            "clean_tree",
+            "remote_sha_match",
+            "ci_exact_sha",
+            "review",
+            "regression"
+          ],
+          "worktree": "/srv/codestra/workstations/Codestra-Document-Schemas/sections/ds-06-release/subsections/01-generated-artifacts/repo"
+        },
+        {
+          "subsection": "02-certification",
+          "workstation_id": "codestra-document-schemas::ds-06-release::02-certification",
+          "branch": "subsection/ds-06-release--02-certification",
+          "parent_branch": "section/ds-06-release",
+          "order": 2,
+          "depends_on": [
+            "codestra-document-schemas::ds-06-release::01-generated-artifacts"
+          ],
+          "required_gates": [
+            "lint",
+            "unit",
+            "integration",
+            "contract",
+            "security",
+            "clean_tree",
+            "remote_sha_match",
+            "ci_exact_sha",
+            "review",
+            "regression"
+          ],
+          "worktree": "/srv/codestra/workstations/Codestra-Document-Schemas/sections/ds-06-release/subsections/02-certification/repo"
+        },
+        {
+          "subsection": "03-promotion",
+          "workstation_id": "codestra-document-schemas::ds-06-release::03-promotion",
+          "branch": "subsection/ds-06-release--03-promotion",
+          "parent_branch": "section/ds-06-release",
+          "order": 3,
+          "depends_on": [
+            "codestra-document-schemas::ds-06-release::02-certification"
+          ],
+          "required_gates": [
+            "lint",
+            "unit",
+            "integration",
+            "contract",
+            "security",
+            "clean_tree",
+            "remote_sha_match",
+            "ci_exact_sha",
+            "review",
+            "regression"
+          ],
+          "worktree": "/srv/codestra/workstations/Codestra-Document-Schemas/sections/ds-06-release/subsections/03-promotion/repo"
+        }
+      ]
+    }
+  ]
+}
